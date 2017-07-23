@@ -15,12 +15,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Louy">
-<meta property="og:url" content="https://it80.github.io/archives/2017/01/index.html">
+<meta name="description" content="clone github respository1234cd d:/hexo  #Git Bash命令行切换到hexo目录 git clone https://github.com/it80/it80.github.io.git  .deploy/it80.github.io  #将之前创建的repo克隆到本地，新建一个目录.deploy用于存放克隆的内容 创建一个上传更新脚本，保存为.sh文">
+<meta name="keywords" content="hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo d更新博文失败，改用git命令行部署">
+<meta property="og:url" content="https://it80.github.io/2015/07/02/2015-07-02hexo d更新博文失败，改用git命令行部署/index.html">
 <meta property="og:site_name" content="Louy">
+<meta property="og:description" content="clone github respository1234cd d:/hexo  #Git Bash命令行切换到hexo目录 git clone https://github.com/it80/it80.github.io.git  .deploy/it80.github.io  #将之前创建的repo克隆到本地，新建一个目录.deploy用于存放克隆的内容 创建一个上传更新脚本，保存为.sh文">
+<meta property="og:updated_time" content="2017-07-23T07:14:00.066Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Louy">
+<meta name="twitter:title" content="hexo d更新博文失败，改用git命令行部署">
+<meta name="twitter:description" content="clone github respository1234cd d:/hexo  #Git Bash命令行切换到hexo目录 git clone https://github.com/it80/it80.github.io.git  .deploy/it80.github.io  #将之前创建的repo克隆到本地，新建一个目录.deploy用于存放克隆的内容 创建一个上传更新脚本，保存为.sh文">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives: 2017/1 | Louy</title>
+<title>hexo d更新博文失败，改用git命令行部署 | Louy</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -62,8 +67,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
-        isArchive: true,
+        isPost: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -256,155 +261,164 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-2015-07-02hexo d更新博文失败，改用git命令行部署" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2015/07/02/2015-07-02hexo d更新博文失败，改用git命令行部署/" class="article-date">
+      <time datetime="2015-07-01T16:00:00.000Z" itemprop="datePublished">2015-07-02</time>
+</a>
+
+
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hexo d更新博文失败，改用git命令行部署
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p><strong>clone github respository</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd d:/hexo  <span class="comment">#Git Bash命令行切换到hexo目录 </span></div><div class="line"></div><div class="line">git <span class="keyword">clone</span> https:<span class="comment">//github.com/it80/it80.github.io.git  .deploy/it80.github.io </span></div><div class="line"> <span class="comment">#将之前创建的repo克隆到本地，新建一个目录.deploy用于存放克隆的内容</span></div></pre></td></tr></table></figure></p>
+<p><strong>创建一个上传更新脚本，保存为.sh文件，存放在hexo目录下，需要部署的时候执行即可</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">hexo g #生成public文件夹下新内容</div><div class="line">cp -R public/* .deploy/it80.github.io  #将其拷贝到it80.github.io目录</div><div class="line">cd .deploy/it80.github.io</div><div class="line">git add .</div><div class="line">git commit -m &quot;update&quot;</div><div class="line">git push origin master</div></pre></td></tr></table></figure>
+<p><strong>说明：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">hexo g #生成<span class="keyword">public</span>文件夹下新内容</div><div class="line"></div><div class="line">cp -R <span class="keyword">public</span><span class="comment">/* .deploy/it80.github.io  #将其拷贝到it80.github.io目录</span></div><div class="line"></div><div class="line">cd .deploy/it80.github.io</div><div class="line"></div><div class="line">git add .</div><div class="line">git commit -m "update"   #如果执行commit后提示输入用户信息，输入信息后，再git commit</div><div class="line"></div><div class="line">#git config  user.email "itxuzhou@gmail.com" </div><div class="line">#git config user.name "it80"   </div><div class="line">#git commit -m "update"</div><div class="line"></div><div class="line">git push origin master</div></pre></td></tr></table></figure>
+
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
+    </div>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/01/11/2017-6-14静态缓存设置失效时间/" class="archive-article-date">
-      <time datetime="2017-01-10T16:00:00.000Z" itemprop="datePublished">01-11</time>
-</a>
-
-
-        </div>
-         
+  </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/11/2017-6-14静态缓存设置失效时间/">静态缓存设置失效时间</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2015/07/02/2015-07-02hexo d更新博文失败，改用git命令行部署/">hexo d更新博文失败，改用git命令行部署</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Louy</a></p>
+        <p><span>发布时间:</span>2015-07-02, 00:00:00</p>
+        <p><span>最后更新:</span>2017-07-23, 15:14:00</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2015/07/02/2015-07-02hexo d更新博文失败，改用git命令行部署/" title="hexo d更新博文失败，改用git命令行部署">https://it80.github.io/2015/07/02/2015-07-02hexo d更新博文失败，改用git命令行部署/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://it80.github.io/2015/07/02/2015-07-02hexo d更新博文失败，改用git命令行部署/　　作者: Louy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/01/01/2017-6-27修改注册表解决windows 10 下 apache 80 端口被占用问题/">
+                    windows 10 下 apache 80 端口被占用问题(修改注册表解决)
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2015/07/01/2017-6-14hexo：更换电脑，如何继续写博客/">
+                    hexo：更换电脑，如何继续写博客
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/01/10/git命令个人使用/" class="archive-article-date">
-      <time datetime="2017-01-09T16:00:00.000Z" itemprop="datePublished">01-10</time>
-</a>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/10/git命令个人使用/">git命令个人使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
     </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+
+<div class="share">
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/01/01/2017-6-14Memcache和Redis缓存技术/" class="archive-article-date">
-      <time datetime="2016-12-31T16:00:00.000Z" itemprop="datePublished">01-01</time>
-</a>
-
-
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
         </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/01/2017-6-14Memcache和Redis缓存技术/">Memcache和Redis缓存</a>
-    </h1>
-  
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"hexo d更新博文失败，改用git命令行部署　| Louy　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
 
-        <div class="article-info info-on-archive">
-          
+    
+</div>
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/memcache/">memcache</a></li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+    <style type="text/css">
+    #scroll {
+      display: none;
+    }
+    </style>
+    <div class="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#ds-thread" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
     </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/01/01/2017-6-14php开发app接口/" class="archive-article-date">
-      <time datetime="2016-12-31T16:00:00.000Z" itemprop="datePublished">01-01</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/01/2017-6-14php开发app接口/">PHP开发APP接口</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-
 </div>
       <footer id="footer">
     <div class="outer">
