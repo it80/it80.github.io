@@ -15,17 +15,14 @@
 
 
 
-<meta name="description" content="生成静态文件， txt格式">
-<meta name="keywords" content="php">
+<meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="静态缓存设置失效时间">
-<meta property="og:url" content="https://it80.github.io/2017/01/11/2017-6-14静态缓存设置失效时间/index.html">
+<meta property="og:title" content="Hexo ��ǩ">
+<meta property="og:url" content="https://it80.github.io/2015/05/12/Hexo 书签/index.html">
 <meta property="og:site_name" content="Louy">
-<meta property="og:description" content="生成静态文件， txt格式">
-<meta property="og:updated_time" content="2017-06-14T16:48:02.167Z">
+<meta property="og:updated_time" content="2017-07-23T07:46:01.763Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="静态缓存设置失效时间">
-<meta name="twitter:description" content="生成静态文件， txt格式">
+<meta name="twitter:title" content="Hexo ��ǩ">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +54,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>静态缓存设置失效时间 | Louy</title>
+<title>Hexo ��ǩ | Louy</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -261,11 +258,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-2017-6-14静态缓存设置失效时间" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Hexo 书签" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/01/11/2017-6-14静态缓存设置失效时间/" class="article-date">
-      <time datetime="2017-01-10T16:00:00.000Z" itemprop="datePublished">2017-01-11</time>
+      <a href="/2015/05/12/Hexo 书签/" class="article-date">
+      <time datetime="2015-05-11T16:00:00.000Z" itemprop="datePublished">2015-05-12</time>
 </a>
 
 
@@ -280,7 +277,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      静态缓存设置失效时间
+      Hexo ��ǩ
     </h1>
   
 
@@ -291,7 +288,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -300,8 +297,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p>生成静态文件， txt格式<br><a id="more"></a><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="comment">/**</span></div><div class="line"> *生成、获取、删除</div><div class="line"> *</div><div class="line"> */</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">File</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> $_dir;</div><div class="line"></div><div class="line">	<span class="keyword">const</span> EXT = <span class="string">'.txt'</span>;</div><div class="line"></div><div class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="comment">//默认放到当前文件目录下的files目录</span></div><div class="line">		<span class="keyword">$this</span>-&gt;_dir = dirname(<span class="keyword">__FILE__</span>) . <span class="string">'/files/'</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/*</span></div><div class="line">	 *<span class="doctag">@param</span> key  缓存文件的文件名</div><div class="line">	 *<span class="doctag">@param</span> value 缓存数据</div><div class="line">	 */</div><div class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">cacheData</span><span class="params">($key, $value = <span class="string">''</span>, $cacheTime = <span class="number">0</span>)</span> </span>&#123;</div><div class="line">		$filename = <span class="keyword">$this</span>-&gt;_dir  . $key . <span class="keyword">self</span>::EXT;</div><div class="line"></div><div class="line">		<span class="keyword">if</span>($value !== <span class="string">''</span>) &#123; <span class="comment">// 将value值写入缓存</span></div><div class="line">			<span class="keyword">if</span>(is_null($value)) &#123;<span class="comment">//value为空，删除文件</span></div><div class="line">				<span class="keyword">return</span> @unlink($filename);</div><div class="line">			&#125;</div><div class="line">			$dir = dirname($filename);<span class="comment">//获得目录</span></div><div class="line">			<span class="keyword">if</span>(!is_dir($dir)) &#123;<span class="comment">//判断目录是否存在</span></div><div class="line">				mkdir($dir, <span class="number">0777</span>);<span class="comment">//创建目录</span></div><div class="line">			&#125;</div><div class="line">			<span class="comment">//cacheTime 缓存失效时间</span></div><div class="line">			$cacheTime = sprintf(<span class="string">'%011d'</span>, $cacheTime);</div><div class="line">			<span class="comment">//将缓存失效时间一起写入</span></div><div class="line">			<span class="keyword">return</span> file_put_contents($filename,$cacheTime . json_encode($value));</div><div class="line">			<span class="comment">//filename,要写入的文件  后面的是要写入的值（要求字符串格式）</span></div><div class="line">		&#125;</div><div class="line">		<span class="comment">//文件不存在</span></div><div class="line">		<span class="keyword">if</span>(!is_file($filename)) &#123;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">FALSE</span>;</div><div class="line">		&#125; </div><div class="line">		<span class="comment">//获取文件的内容</span></div><div class="line">		$contents = file_get_contents($filename);</div><div class="line">		<span class="comment">//获取缓存失效时间 00000001200</span></div><div class="line">		<span class="comment">//substr()获得字符串的子串</span></div><div class="line">		$cacheTime = (int)substr($contents, <span class="number">0</span> ,<span class="number">11</span>);</div><div class="line">		$value = substr($contents, <span class="number">11</span>);</div><div class="line">		<span class="comment">//缓存失效时间+文件修改时间&lt;当前时间 ，删除， 返回false</span></div><div class="line">			<span class="comment">//cacheTime默认设置0，永久有效</span></div><div class="line">		<span class="keyword">if</span>($cacheTime !=<span class="number">0</span> &amp;&amp; ($cacheTime + filemtime($filename) &lt; time())) &#123;</div><div class="line">			unlink($filename);</div><div class="line">			<span class="keyword">return</span> <span class="keyword">FALSE</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> json_decode($value, <span class="keyword">true</span>);</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$file = <span class="keyword">new</span> File();</div></pre></td></tr></table></figure></p>
-
+        <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script>
       
       
     </div>
@@ -310,13 +306,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/01/11/2017-6-14静态缓存设置失效时间/">静态缓存设置失效时间</a></p>
+        <p><span>本文标题:</span><a href="/2015/05/12/Hexo 书签/">Hexo ��ǩ</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Louy</a></p>
-        <p><span>发布时间:</span>2017-01-11, 00:00:00</p>
-        <p><span>最后更新:</span>2017-06-15, 00:48:02</p>
+        <p><span>发布时间:</span>2015-05-12, 00:00:00</p>
+        <p><span>最后更新:</span>2017-07-23, 15:46:01</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/01/11/2017-6-14静态缓存设置失效时间/" title="静态缓存设置失效时间">https://it80.github.io/2017/01/11/2017-6-14静态缓存设置失效时间/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://it80.github.io/2017/01/11/2017-6-14静态缓存设置失效时间/　　作者: Louy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2015/05/12/Hexo 书签/" title="Hexo ��ǩ">https://it80.github.io/2015/05/12/Hexo 书签/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://it80.github.io/2015/05/12/Hexo 书签/　　作者: Louy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -329,15 +325,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/05/10/使用phpize为php环境编译安装扩展：以mcrypt为例/">
-                    使用phpize为php环境编译安装扩展：以mcrypt为例, centos环境
+                <a href="/2015/07/01/2017-6-14hexo：更换电脑，如何继续写博客/">
+                    hexo：更换电脑，如何继续写博客
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/01/10/git命令个人使用/">
-                    git命令个人使用
+                <a href="/2015/05/11/Hexo博文更新及提交/">
+                    Hexo博客文章更新及提交
                 </a>
             </div>
         
@@ -386,7 +382,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"静态缓存设置失效时间　| Louy　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Hexo ��ǩ　| Louy　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
