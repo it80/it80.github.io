@@ -137,13 +137,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
+                        <li>Menu</li>
+                        <li>Tags</li>
                         
-                        <li>友情链接</li>
+                        <li>Friends</li>
                         
                         
-                        <li>关于我</li>
+                        <li>About Me</li>
                         
                     </ul>
                 </div>
@@ -259,7 +259,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
       <div class="body-wrap"><article id="post-2017-7Centos5.5LAMP安装" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -402,17 +402,17 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/07/20/2017-7Centos5.5LAMP安装/">CentOS5.5安装lamp</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">Louy</a></p>
-        <p><span>发布时间:</span>2017-07-20, 00:00:00</p>
-        <p><span>最后更新:</span>2017-07-21, 00:49:14</p>
+        <p><span>Title:</span><a href="/2017/07/20/2017-7Centos5.5LAMP安装/">CentOS5.5安装lamp</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">Louy</a></p>
+        <p><span>Created:</span>2017-07-20, 00:00:00</p>
+        <p><span>Updated:</span>2017-07-21, 00:49:14</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/07/20/2017-7Centos5.5LAMP安装/" title="CentOS5.5安装lamp">https://it80.github.io/2017/07/20/2017-7Centos5.5LAMP安装/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://it80.github.io/2017/07/20/2017-7Centos5.5LAMP安装/　　作者: Louy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2017/07/20/2017-7Centos5.5LAMP安装/" title="CentOS5.5安装lamp">https://it80.github.io/2017/07/20/2017-7Centos5.5LAMP安装/</a>
+            <span class="copy-path" data-clipboard-text="From https://it80.github.io/2017/07/20/2017-7Centos5.5LAMP安装/　　By Louy" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
         </p>
     </div>
 
@@ -434,7 +434,7 @@
 
 
     <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
+        <strong class="toc-title">Contents</strong>
         
             <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#网络设置Host-Only"><span class="toc-number">1.</span> <span class="toc-text">网络设置Host Only</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装ftp"><span class="toc-number">2.</span> <span class="toc-text">安装ftp</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装gcc-在Centos目录下-执行命令"><span class="toc-number">3.</span> <span class="toc-text">安装gcc 在Centos目录下 执行命令</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#源码编译方式安装zlib软件-gz文件保存在tar目录"><span class="toc-number">3.1.</span> <span class="toc-text">源码编译方式安装zlib软件(.gz文件保存在tar目录)</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#源码编译方式安装apache"><span class="toc-number">4.</span> <span class="toc-text">源码编译方式安装apache</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#静待好多分钟……"><span class="toc-number"></span> <span class="toc-text">静待好多分钟…….</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#PHP安装"><span class="toc-number">1.</span> <span class="toc-text">PHP安装</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#四-安装libxml2"><span class="toc-number">1.1.</span> <span class="toc-text">(四)安装libxml2</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#五-安装jpeg8"><span class="toc-number">1.2.</span> <span class="toc-text">(五)安装jpeg8</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#六-安装libpng"><span class="toc-number">1.3.</span> <span class="toc-text">(六)安装libpng</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#七-安装freetype-字体库"><span class="toc-number">1.4.</span> <span class="toc-text">(七)安装freetype(字体库)</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#八-安装GD库"><span class="toc-number">1.5.</span> <span class="toc-text">(八)安装GD库</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#九-安装-php5"><span class="toc-number">1.6.</span> <span class="toc-text">(九)安装 php5</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-编译安装MySQL"><span class="toc-number">2.</span> <span class="toc-text">1)编译安装MySQL</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#继续等很久-大约15分钟"><span class="toc-number">3.</span> <span class="toc-text">继续等很久 大约15分钟</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-配置并初始化MySQL"><span class="toc-number">4.</span> <span class="toc-text">2)配置并初始化MySQL</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#windows下用navicat连接虚拟机linux下MySQL数据库"><span class="toc-number">5.</span> <span class="toc-text">windows下用navicat连接虚拟机linux下MySQL数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#授权MySQL允许远程用户访问"><span class="toc-number">5.1.</span> <span class="toc-text">授权MySQL允许远程用户访问</span></a></li></ol></li></ol>
         
@@ -450,10 +450,10 @@
         }
     </style>
 
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
 
     <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
     </script>
 
 
@@ -510,14 +510,14 @@
                 2016-2017 Louy
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -526,7 +526,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -559,9 +559,9 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
