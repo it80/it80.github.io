@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Louy" />
+
+
+
+<meta name="description" content="网络设置Host Only">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS5.5安装lamp">
+<meta property="og:url" content="https://it80.github.io/2017/07/20/2017-7Centos5.5LAMP安装/index.html">
+<meta property="og:site_name" content="Louy">
+<meta property="og:description" content="网络设置Host Only">
+<meta property="og:updated_time" content="2017-07-20T16:49:14.486Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CentOS5.5安装lamp">
+<meta name="twitter:description" content="网络设置Host Only">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Louy" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>CentOS5.5安装lamp | Louy</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Louy</a></h1>
+        </hgroup>
+
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                            <li><a href="/404/">寶貝回家</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:8090time@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa Twitter" href="https://twitter.com/itxuzhou" title="Twitter"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/">chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-github/">hexo github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/memcache/">memcache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">8090time@gmail.com</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Louy</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Louy</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                    <li><a href="/404/">寶貝回家</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:8090time@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa Twitter" target="_blank" href="https://twitter.com/itxuzhou" title="Twitter"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-2017-7Centos5.5LAMP安装" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/07/20/2017-7Centos5.5LAMP安装/" class="article-date">
+      <time datetime="2017-07-19T16:00:00.000Z" itemprop="datePublished">2017-07-20</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CentOS5.5安装lamp
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h5 id="网络设置Host-Only"><a href="#网络设置Host-Only" class="headerlink" title="网络设置Host Only"></a>网络设置Host Only</h5><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">cd  /etc/sysconfig/network-scripts</div><div class="line"></div><div class="line">cp ifcfg-eth0  ifcfg-eth0.bak</div><div class="line"></div><div class="line">vi ifcfg-eth0</div><div class="line"></div><div class="line">DEVICE=eth0</div><div class="line">BOOTPROTO=static    #设置为静态</div><div class="line">IPADDR=192.168.56.110  #添加 。110为自定义，ip与以太网ip地址段一致</div><div class="line">NETMASK=255.255.255.0  #添加。子网掩码</div><div class="line">GATEWAY=192.168.56.101 #添加。网关设置为以太网的ip地址</div><div class="line">HWADDR=08:00:27:01:65:4F</div><div class="line">ONBOOT=yes</div><div class="line">HOTPLUG=no</div><div class="line">DHCP_HOSTNAME=localhost.localdomain</div></pre></td></tr></table></figure>
+<h5 id="安装ftp"><a href="#安装ftp" class="headerlink" title="安装ftp"></a>安装ftp</h5><p>光驱挂载:<br>手动加载iso文件</p>
+<p>新建rom 目录<br>[root@localhost louyang]#<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir rom</div></pre></td></tr></table></figure></p>
+<p>/dev/cdrom挂载到rom目录<br>[root@localhost louyang]#<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mount /dev/cdrom   ./rom</div></pre></td></tr></table></figure></p>
+<p>rom下的CentOS目录执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm -ivh vsftpd-2.0.5-16.el5_4.1.i386.rpm</div></pre></td></tr></table></figure></p>
+<p>启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service  vsftpd  start</div></pre></td></tr></table></figure></p>
+<p>安装FTP后连接:</p>
+<p>设置-网络-端口转发, 设置端口22<br>登陆时文件协议选择 :SFTP</p>
+<p>新建tar目录 /home/louyang/tar 软件上传到tar下</p>
+<h5 id="安装gcc-在Centos目录下-执行命令"><a href="#安装gcc-在Centos目录下-执行命令" class="headerlink" title="安装gcc 在Centos目录下 执行命令"></a>安装gcc 在Centos目录下 执行命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">rpm -ivh kernel-headers-2.6.18-194.el5.i386.rpm</div><div class="line"></div><div class="line">rpm -ivh glibc-headers-2.5-49.i386.rpm</div><div class="line"></div><div class="line">rpm -ivh glibc-devel-2.5-49.i386.rpm</div><div class="line"></div><div class="line">rpm -ivh libgomp-4.4.0-6.el5.i386.rpm</div><div class="line"></div><div class="line">rpm -ivh gcc-4.1.2-48.el5.i386.rpm</div><div class="line"></div><div class="line">rpm -ivh gcc-c++-4.1.2-48.el5.i386.rpm</div><div class="line"></div><div class="line">rpm -ivh libstdc++-devel-4.1.2-48.el5.i386.rpm</div></pre></td></tr></table></figure>
+<p>==================================================</p>
+<h6 id="源码编译方式安装zlib软件-gz文件保存在tar目录"><a href="#源码编译方式安装zlib软件-gz文件保存在tar目录" class="headerlink" title="源码编译方式安装zlib软件(.gz文件保存在tar目录)"></a>源码编译方式安装zlib软件(.gz文件保存在tar目录)</h6><p>tar目录下 执行命令如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar zxvf zlib-1.2.5.tar.gz</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cd zlib-1.2.5</div><div class="line"></div><div class="line">./configure</div><div class="line"></div><div class="line">make  &amp;&amp; make install</div></pre></td></tr></table></figure>
+<p>===========================================</p>
+<h5 id="源码编译方式安装apache"><a href="#源码编译方式安装apache" class="headerlink" title="源码编译方式安装apache"></a>源码编译方式安装apache</h5><p>tar目录下 执行命令如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar jxvf  httpd-2.2.19.tar.bz2</div></pre></td></tr></table></figure>
+<p>切换到 http-2.2.19目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd  httpd-2.2.19</div></pre></td></tr></table></figure>
+<p>执行以下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">./configure --prefix=/usr/local/http2 \</div><div class="line">--enable-modules=all \</div><div class="line">--enable-mods-shared=all \</div><div class="line">--enable-so</div></pre></td></tr></table></figure>
+<p>执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure></p>
+<h1 id="静待好多分钟……"><a href="#静待好多分钟……" class="headerlink" title="静待好多分钟……."></a>静待好多分钟…….</h1><p>启动Apache</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd    /usr/local/http2/bin/</div></pre></td></tr></table></figure>
+<p>启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./apachectl start</div></pre></td></tr></table></figure></p>
+<p>查看服务进程 ps -A | grep httpd</p>
+<p>=======================================</p>
+<h5 id="PHP安装"><a href="#PHP安装" class="headerlink" title="PHP安装"></a>PHP安装</h5><p>先安装</p>
+<ul>
+<li>libxml2-2.7.2.tar.gz</li>
+<li>jpegsrc.v8b.tar.gz </li>
+<li>libpng-1.4.3.tar.gz      </li>
+<li>freetype-2.4.1.tar.gz</li>
+<li>gd-2.0.35.tar.gz</li>
+<li>===========<h6 id="四-安装libxml2"><a href="#四-安装libxml2" class="headerlink" title="(四)安装libxml2"></a>(四)安装libxml2</h6></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">shell&gt; cd /home/shuhua/tar</div><div class="line">shell&gt; tar zxvf libxml2-2.7.2.tar.gz </div><div class="line">shell&gt; cd libxml2-2.7.2</div><div class="line">shell&gt;./configure --prefix=/usr/local/libxml2 </div><div class="line">shell&gt; make &amp;&amp; make install</div></pre></td></tr></table></figure>
+<p>===============</p>
+<h6 id="五-安装jpeg8"><a href="#五-安装jpeg8" class="headerlink" title="(五)安装jpeg8"></a>(五)安装jpeg8</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">shell&gt; cd /home/shuhua/tar</div><div class="line">shell&gt; tar -zxvf jpegsrc.v8b.tar.gz </div><div class="line">shell&gt; cd jpeg-8b </div><div class="line">shell&gt;</div><div class="line">./configure --prefix=/usr/local/jpeg \</div><div class="line">--enable-shared --enable-static </div><div class="line">shell&gt; make &amp;&amp; make install</div></pre></td></tr></table></figure>
+<p>================</p>
+<h6 id="六-安装libpng"><a href="#六-安装libpng" class="headerlink" title="(六)安装libpng"></a>(六)安装libpng</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">shell&gt; cd /home/shuhua/tar</div><div class="line">shell&gt; tar zxvf libpng-1.4.3.tar.gz </div><div class="line">shell&gt; cd libpng-1.4.3 </div><div class="line">shell&gt;./configure  #和zlib一样不要带参数，让它默认安装到相应目录</div><div class="line">shell&gt; make &amp;&amp; make install</div></pre></td></tr></table></figure>
+<p>================</p>
+<h6 id="七-安装freetype-字体库"><a href="#七-安装freetype-字体库" class="headerlink" title="(七)安装freetype(字体库)"></a>(七)安装freetype(字体库)</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">shell&gt; cd /home/shuhua/tar</div><div class="line">shell&gt; tar zxvf freetype-2.4.1.tar.gz </div><div class="line">shell&gt; cd freetype-2.4.1</div><div class="line">shell&gt;./configure --prefix=/usr/local/freetype </div><div class="line">shell&gt; make &amp;&amp; make install</div></pre></td></tr></table></figure>
+<p>====================</p>
+<h6 id="八-安装GD库"><a href="#八-安装GD库" class="headerlink" title="(八)安装GD库"></a>(八)安装GD库</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">shell&gt; cd /home/shuhua/tar</div><div class="line">shell&gt; tar -zvxf gd-2.0.35.tar.gz </div><div class="line">shell&gt; mkdir -p /usr/local/gd </div><div class="line">shell&gt; cd gd-2.0.35 </div><div class="line"></div><div class="line">./configure --prefix=/usr/local/gd  \</div><div class="line">--with-jpeg=/usr/local/jpeg/ 	\</div><div class="line">--with-png --with-zlib \</div><div class="line">--with-freetype=/usr/local/freetype</div><div class="line"></div><div class="line">shell&gt; make &amp;&amp; make install</div></pre></td></tr></table></figure>
+<p>=============================</p>
+<h6 id="九-安装-php5"><a href="#九-安装-php5" class="headerlink" title="(九)安装 php5"></a>(九)安装 php5</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">shell&gt; cd /home/shuhua/tar</div><div class="line">shell&gt; tar -jxvf php-5.3.6.tar.bz2</div><div class="line">shell&gt; cd php-5.3.6</div><div class="line">shell&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">./configure --prefix=/usr/local/php \</div><div class="line">--with-apxs2=/usr/local/http2/bin/apxs \</div><div class="line">--with-mysql=mysqlnd \</div><div class="line">--with-pdo-mysql=mysqlnd \</div><div class="line">--with-mysqli=mysqlnd \</div><div class="line">--with-freetype-dir=/usr/local/freetype \</div><div class="line">--with-gd=/usr/local/gd \</div><div class="line">--with-zlib --with-libxml-dir=/usr/local/libxml2 \</div><div class="line">--with-jpeg-dir=/usr/local/jpeg \</div><div class="line">--with-png-dir \</div><div class="line">--enable-mbstring=all \</div><div class="line">--enable-mbregex \</div><div class="line">--enable-shared</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">shell&gt; make &amp;&amp; make install</div></pre></td></tr></table></figure>
+<p>复制php.ini配置文件到指定目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">shell&gt; cp php.ini-development /usr/local/php/lib/php.ini</div></pre></td></tr></table></figure>
+<p>配置Apache使其支持php</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /usr/local/http2/conf/httpd.conf</div></pre></td></tr></table></figure>
+<p>1)在httpd.conf(Apache主配置文件)中增加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">AddType application/x-httpd-php .php</div></pre></td></tr></table></figure>
+<p>2)找到下面这段话:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;IfModule dir_module&gt;</div><div class="line">    DirectoryIndex index.html</div><div class="line">&lt;/IfModule&gt;</div></pre></td></tr></table></figure>
+<p>在index.html 前面添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">index.php</div></pre></td></tr></table></figure></p>
+<p>3)建立php测试网页</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /usr/local/http2/htdocs/index.php</div></pre></td></tr></table></figure>
+<p>输入如下内容:<br>&lt;?php<br>phpinfo();<br>?&gt;</p>
+<p>4)重启apache</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">shell&gt; /usr/local/http2/bin/apachectl restart</div></pre></td></tr></table></figure>
+<p>如果出错apache 重启错误:<br>php模块安装完毕后重启apache如果提示如下信息(apache重启失败)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost http2]# /usr/local/http2/bin/apachectl restart</div><div class="line">httpd: Syntax error on line 105 of /usr/local/http2/conf/httpd.conf: Cannot load /usr/local/http2/modules/libphp5.so into server: /usr/local/libxml2/lib/libxml2.so.2: symbol gzopen64, version ZLIB_1.2.3.3 not defined in file libz.so.1 with link time reference</div></pre></td></tr></table></figure>
+<p>执行1,2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo &quot;/usr/local/lib&quot; &gt;&gt; /etc/ld.so.conf</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ldconfig</div></pre></td></tr></table></figure>
+<p>重启<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/http2/bin/apachectl restart</div></pre></td></tr></table></figure></p>
+<p>php相关设置<br>修改php.ini<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/php/lib/php.ini</div></pre></td></tr></table></figure></p>
+<p>timezone = PRC<br>short_open_tag 开启</p>
+<p>rm -rf </p>
+<h5 id="1-编译安装MySQL"><a href="#1-编译安装MySQL" class="headerlink" title="1)编译安装MySQL"></a>1)编译安装MySQL</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">shell&gt; cd /home/shuhua/tar</div><div class="line">shell&gt; tar -xzvf mysql-5.1.58.tar.gz</div><div class="line">shell&gt; cd mysql-5.1.58	</div><div class="line">shell&gt; </div><div class="line">./configure --prefix=/usr/local/mysql \</div><div class="line">--with-charset=utf8 \</div><div class="line">--with-extra-charsets=gbk,gb2312,binary</div></pre></td></tr></table></figure>
+<p>安装mysql需要的依赖软件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">cd  /home/louyang/rom/CentOS</div><div class="line"></div><div class="line">rpm -ivh libtermcap-devel-2.0.8-46.1.i386.rpm</div><div class="line"></div><div class="line">cd /home/louyang/tar/mysql-5.1.58</div><div class="line"> </div><div class="line">./configure --prefix=/usr/local/mysql \</div><div class="line">--with-charset=utf8 \</div><div class="line">--with-extra-charsets=gbk,gb2312,binary  </div><div class="line">(提示信息Thank you for choosing MySQL!)</div><div class="line">shell&gt; make &amp;&amp; make install</div></pre></td></tr></table></figure>
+<p>make &amp;&amp; makeinstall如果最后遇c+ + 失败信息 回头重装gcc-c++<br>切换回cd  /home/louyang/rom/CentOS<br>安装rpm -ivh gcc-c++-4.1.2-48.el5.i386.rpm<br>再make &amp;&amp; make install </p>
+<h5 id="继续等很久-大约15分钟"><a href="#继续等很久-大约15分钟" class="headerlink" title="继续等很久 大约15分钟"></a>继续等很久 大约15分钟</h5><h5 id="2-配置并初始化MySQL"><a href="#2-配置并初始化MySQL" class="headerlink" title="2)配置并初始化MySQL"></a>2)配置并初始化MySQL</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">shell&gt; groupadd mysql	</div><div class="line">shell&gt; useradd  -g mysql mysql	</div><div class="line">shell&gt; cp support-files/my-medium.cnf /etc/my.cnf</div><div class="line">shell&gt; cd /usr/local/mysql</div><div class="line">shell&gt; chown -R mysql.mysql .	      //数据库用户信息不小心删除光了，需要从此开始执行以下指令</div><div class="line">shell&gt; bin/mysql_install_db --user=mysql \</div><div class="line">--datadir=/usr/local/mysql/var</div></pre></td></tr></table></figure>
+<p>创建mysql测试数据库和系统的数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">shell&gt; chown -R root .</div></pre></td></tr></table></figure>
+<pre><code>把当前目录文件的主人都改为root，避免数据库恢复为出厂设置。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">shell&gt; chown -R mysql var</div><div class="line">shell&gt; bin/mysqld_safe --user=mysql &amp;</div></pre></td></tr></table></figure>
+<pre><code>启动mysql，&amp; 后台运行mysql服务
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">shell&gt; ps –A | grep mysql</div></pre></td></tr></table></figure>
+<p> //查看mysql是否有启动</p>
+<p> 3)测试数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/mysql/bin</div><div class="line">./mysql</div><div class="line">mysql&gt; show databases;</div></pre></td></tr></table></figure>
+<p>4)接上步,修改mysql密码(可不做此步,默认无密码)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt;UPDATE user SET password=PASSWORD(&apos;new_password&apos;)	WHERE user=&apos;root&apos;;</div><div class="line">mysql&gt;flush privileges;</div></pre></td></tr></table></figure>
+<h5 id="windows下用navicat连接虚拟机linux下MySQL数据库"><a href="#windows下用navicat连接虚拟机linux下MySQL数据库" class="headerlink" title="windows下用navicat连接虚拟机linux下MySQL数据库"></a>windows下用navicat连接虚拟机linux下MySQL数据库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grant all privileges on *.* to &apos;root&apos;@&apos;%&apos; identified by &apos;123456&apos; with grant option;</div></pre></td></tr></table></figure>
+<p>在虚拟机中查看网路端口信息 netstat -ntpl<br>查看防火墙状态 iptables -vnL<br>清除防火墙中链中的规则iptables -F</p>
+<h6 id="授权MySQL允许远程用户访问"><a href="#授权MySQL允许远程用户访问" class="headerlink" title="授权MySQL允许远程用户访问"></a>授权MySQL允许远程用户访问</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grant all privileges on *.* to &apos;root&apos;@&apos;%&apos; identified by &apos;123456&apos; with grant option;</div></pre></td></tr></table></figure>
+<p>刷新权限！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flush privileges;</div></pre></td></tr></table></figure></p>
+
+      
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2017/07/20/2017-7Centos5.5LAMP安装/">CentOS5.5安装lamp</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">Louy</a></p>
+        <p><span>Created:</span>2017-07-20, 00:00:00</p>
+        <p><span>Updated:</span>2017-07-21, 00:49:14</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2017/07/20/2017-7Centos5.5LAMP安装/" title="CentOS5.5安装lamp">https://it80.github.io/2017/07/20/2017-7Centos5.5LAMP安装/</a>
+            <span class="copy-path" data-clipboard-text="From https://it80.github.io/2017/07/20/2017-7Centos5.5LAMP安装/　　By Louy" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/06/30/2017-6-30多域名虚拟主机配置/">
+                    多域名虚拟主机配置
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#网络设置Host-Only"><span class="toc-number">1.</span> <span class="toc-text">网络设置Host Only</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装ftp"><span class="toc-number">2.</span> <span class="toc-text">安装ftp</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装gcc-在Centos目录下-执行命令"><span class="toc-number">3.</span> <span class="toc-text">安装gcc 在Centos目录下 执行命令</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#源码编译方式安装zlib软件-gz文件保存在tar目录"><span class="toc-number">3.1.</span> <span class="toc-text">源码编译方式安装zlib软件(.gz文件保存在tar目录)</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#源码编译方式安装apache"><span class="toc-number">4.</span> <span class="toc-text">源码编译方式安装apache</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#静待好多分钟……"><span class="toc-number"></span> <span class="toc-text">静待好多分钟…….</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#PHP安装"><span class="toc-number">1.</span> <span class="toc-text">PHP安装</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#四-安装libxml2"><span class="toc-number">1.1.</span> <span class="toc-text">(四)安装libxml2</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#五-安装jpeg8"><span class="toc-number">1.2.</span> <span class="toc-text">(五)安装jpeg8</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#六-安装libpng"><span class="toc-number">1.3.</span> <span class="toc-text">(六)安装libpng</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#七-安装freetype-字体库"><span class="toc-number">1.4.</span> <span class="toc-text">(七)安装freetype(字体库)</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#八-安装GD库"><span class="toc-number">1.5.</span> <span class="toc-text">(八)安装GD库</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#九-安装-php5"><span class="toc-number">1.6.</span> <span class="toc-text">(九)安装 php5</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-编译安装MySQL"><span class="toc-number">2.</span> <span class="toc-text">1)编译安装MySQL</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#继续等很久-大约15分钟"><span class="toc-number">3.</span> <span class="toc-text">继续等很久 大约15分钟</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-配置并初始化MySQL"><span class="toc-number">4.</span> <span class="toc-text">2)配置并初始化MySQL</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#windows下用navicat连接虚拟机linux下MySQL数据库"><span class="toc-number">5.</span> <span class="toc-text">windows下用navicat连接虚拟机linux下MySQL数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#授权MySQL允许远程用户访问"><span class="toc-number">5.1.</span> <span class="toc-text">授权MySQL允许远程用户访问</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"CentOS5.5安装lamp　| Louy　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style type="text/css">
+    #scroll {
+      display: none;
+    }
+    </style>
+    <div class="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#ds-thread" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    </div>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 Louy
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
